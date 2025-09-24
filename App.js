@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, Platform, Alert, ActivityIndicator, FlatList } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import { Card, List, Provider as PaperProvider } from 'react-native-paper';
-import { Platform } from "react-native";
 import { API_URL_WEB, API_URL_ANDROID } from "@env";
 
 const API_BASE_URL = Platform.OS === "web" ? API_URL_WEB : API_URL_ANDROID;
@@ -56,9 +55,6 @@ export default function App() {
     try {
       // Use your PC IP for Android emulator
      const response = await fetch(`${API_BASE_URL}/api/upload`, {
-    // await fetch('http://192.168.1.100:3000/api/upload', {
-      // const response = await fetch('http://localhost:3000/api/upload', {
-      
         method: 'POST',
         body: formData,
       });
@@ -150,12 +146,12 @@ const styles = StyleSheet.create({
   },
   fileText: {
     fontSize: 16,
-    color: 'green',
+    color: '#000000ff',
   },
   uploadedTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: 'blue',
+    color: '#000000ff',
     marginBottom: 10,
   },
   fileCard: {
